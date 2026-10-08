@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Allan Muganyizi Deus · Full-Stack &amp; DevOps Engineer</title>
+<meta name="description" content="Full-stack and DevOps engineer in Dar es Salaam. I build production web systems with Next.js, React, React Native and Django, and run them on AWS with Docker and CI/CD.">
+<meta property="og:title" content="Allan Muganyizi Deus · Full-Stack & DevOps Engineer">
+<meta property="og:description" content="I build production web systems and run them on AWS.">
+<meta property="og:image" content="https://allan818181.github.io/assets/tz-home.webp">
+<meta name="theme-color" content="#0b0f17">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%231f6feb'/><text x='32' y='42' font-family='Arial' font-weight='700' font-size='26' fill='white' text-anchor='middle'>AD</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0b0f17; --bg2: #0f1522; --card: #131a29; --line: #1f2a3d; --text: #e6edf3; --muted: #93a1b5;
+  --blue: #4f8cff; --green: #3fb950; --amber: #f2b14b; --radius: 16px;
+  --shadow: 0 20px 60px rgba(0,0,0,.45);
+}
+:root[data-theme="light"] {
+  --bg: #f7f9fc; --bg2: #eef2f8; --card: #ffffff; --line: #dde3ec; --text: #0f172a; --muted: #55627a;
+  --blue: #1f6feb; --green: #1a7f37; --amber: #b7791f; --shadow: 0 18px 50px rgba(15,23,42,.12);
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) { --bg: #f7f9fc; --bg2: #eef2f8; --card: #ffffff; --line: #dde3ec; --text: #0f172a; --muted: #55627a; --blue: #1f6feb; --green: #1a7f37; --amber: #b7791f; --shadow: 0 18px 50px rgba(15,23,42,.12); }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.wrap { width: min(1140px, 100% - 40px); margin-inline: auto; }
+.mono { font-family: "JetBrains Mono", monospace; }
+
+/* nav */
+nav { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(14px); background: color-mix(in srgb, var(--bg) 78%, transparent); border-bottom: 1px solid var(--line); }
+nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+.logo { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: -.02em; }
+.logo span { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; background: linear-gradient(135deg, var(--blue), var(--green)); color: #fff; font-size: 14px; }
+.links { display: flex; gap: 26px; font-size: 14.5px; color: var(--muted); }
+.links a:hover { color: var(--text); }
+.navr { display: flex; gap: 10px; align-items: center; }
+.icon-btn { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--line); background: var(--card); color: var(--text); display: grid; place-items: center; cursor: pointer; }
+.navr .btn { padding: 9px 16px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 12px; font-weight: 600; font-size: 14.5px; border: 1px solid var(--line); background: var(--card); transition: transform .15s, border-color .15s; }
+.btn:hover { transform: translateY(-1px); border-color: var(--blue); }
+.btn.primary { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+/* hero */
+header.hero { position: relative; overflow: hidden; padding: 90px 0 70px; }
+.hero::before { content: ""; position: absolute; inset: -40% -10% auto; height: 700px; background: radial-gradient(closest-side, color-mix(in srgb, var(--blue) 28%, transparent), transparent), radial-gradient(closest-side at 80% 60%, color-mix(in srgb, var(--green) 18%, transparent), transparent); pointer-events: none; }
+.hero .wrap { position: relative; display: grid; grid-template-columns: 1.1fr .9fr; gap: 50px; align-items: center; }
+.pill { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); font-size: 13px; color: var(--muted); }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 0 var(--green); animation: ping 2s infinite; }
+@keyframes ping { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--green) 60%, transparent); } 100% { box-shadow: 0 0 0 10px transparent; } }
+h1 { font-size: clamp(38px, 5.4vw, 62px); line-height: 1.05; letter-spacing: -.035em; margin: 18px 0 16px; font-weight: 800; }
+h1 em { font-style: normal; background: linear-gradient(90deg, var(--blue), var(--green)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.lead { font-size: 18px; color: var(--muted); max-width: 560px; }
+.cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 40px; }
+.stat { padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
+.stat b { display: block; font-size: 22px; letter-spacing: -.02em; }
+.stat small { color: var(--muted); font-size: 12.5px; }
+.term { border-radius: var(--radius); border: 1px solid var(--line); background: #0a0e15; box-shadow: var(--shadow); overflow: hidden; }
+.term .bar { display: flex; gap: 7px; padding: 12px 14px; border-bottom: 1px solid #1c2433; }
+.term .bar i { width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; } .term .bar i:nth-child(2) { background: #febc2e; } .term .bar i:nth-child(3) { background: #28c840; }
+.term pre { padding: 18px 20px; font: 500 13.2px/1.75 "JetBrains Mono", monospace; color: #c9d4e3; white-space: pre-wrap; min-height: 300px; }
+.term .ok { color: #3fb950; } .term .k { color: #79b8ff; } .term .c { color: #6b7a90; }
+.cursor { display: inline-block; width: 8px; height: 16px; background: #3fb950; vertical-align: -3px; animation: blink 1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* sections */
+section { padding: 80px 0; }
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--blue); }
+h2 { font-size: clamp(28px, 3.6vw, 40px); letter-spacing: -.03em; line-height: 1.15; margin: 8px 0 14px; }
+.sub { color: var(--muted); max-width: 680px; font-size: 16.5px; }
+.alt { background: var(--bg2); border-block: 1px solid var(--line); }
+
+/* flagship */
+.flag { display: grid; grid-template-columns: 1.35fr .65fr; gap: 22px; margin-top: 36px; align-items: end; }
+.shot { border-radius: 14px; overflow: hidden; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.chip { font-size: 12.5px; padding: 5px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--card); color: var(--muted); }
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 26px; }
+.feat { padding: 22px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--card); }
+.feat h3 { font-size: 16.5px; margin-bottom: 6px; }
+.feat p { color: var(--muted); font-size: 14.5px; }
+.feat .ic { width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center; margin-bottom: 12px; background: color-mix(in srgb, var(--blue) 15%, transparent); color: var(--blue); }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+.arch { margin-top: 26px; border-radius: var(--radius); border: 1px solid var(--line); overflow: hidden; background: var(--card); }
+
+/* projects */
+.projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 34px; }
+.card { display: flex; flex-direction: column; border-radius: var(--radius); border: 1px solid var(--line); background: var(--card); overflow: hidden; transition: transform .2s, border-color .2s; }
+.card:hover { transform: translateY(-3px); border-color: var(--blue); }
+.card .thumb { aspect-ratio: 16 / 10; background: var(--bg2); display: grid; place-items: center; overflow: hidden; border-bottom: 1px solid var(--line); }
+.card .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.card .thumb:has(.glyph) { background: radial-gradient(circle at 25% 20%, color-mix(in srgb, var(--blue) 24%, transparent), transparent 60%), radial-gradient(circle at 85% 90%, color-mix(in srgb, var(--green) 20%, transparent), transparent 55%), var(--bg2); }
+.card .thumb .glyph { font-size: 54px; filter: drop-shadow(0 8px 18px rgba(0,0,0,.35)); }
+.card .body { padding: 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.card h3 { font-size: 16.5px; }
+.card p { font-size: 14px; color: var(--muted); flex: 1; }
+.card .row { display: flex; gap: 12px; font-size: 13.5px; font-weight: 600; }
+.card .row a { color: var(--blue); }
+.tag { font-size: 11.5px; font-weight: 700; padding: 3px 8px; border-radius: 6px; background: color-mix(in srgb, var(--green) 16%, transparent); color: var(--green); align-self: flex-start; }
+
+/* skills */
+.skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 30px; }
+.skills .feat img { height: 40px; width: auto; margin-top: 10px; }
+
+/* contact */
+.contact { text-align: center; }
+.contact .cta { justify-content: center; }
+footer { padding: 30px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 13.5px; }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .7s, transform .7s; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .dot, .cursor { animation: none; } }
+
+@media (max-width: 960px) {
+  .hero .wrap, .flag, .two { grid-template-columns: 1fr; }
+  .projects, .grid3 { grid-template-columns: 1fr 1fr; }
+  .skills { grid-template-columns: 1fr 1fr; }
+  .links { display: none; }
+}
+@media (max-width: 620px) {
+  .projects, .grid3, .skills { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: 1fr 1fr; }
+  header.hero { padding-top: 56px; }
+  section { padding: 60px 0; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top"><span>AD</span>Allan Deus</a>
+    <div class="links"><a href="#work">Work</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div>
+    <div class="navr">
+      <button class="icon-btn" id="theme" aria-label="Toggle light and dark theme"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18z" fill="currentColor"/></svg></button>
+      <a class="btn primary" href="mailto:allandeus014@gmail.com">Hire me</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="pill"><span class="dot"></span>Open to full-time and remote roles</span>
+      <h1>I build production systems <em>and run them in the cloud.</em></h1>
+      <p class="lead">I'm Allan Muganyizi Deus, a full-stack &amp; DevOps engineer in Dar es Salaam. I design, code, deploy and operate web platforms with Next.js, React, React Native and Django, on AWS with Docker and automated CI/CD.</p>
+      <div class="cta">
+        <a class="btn primary" href="#work">See my flagship project →</a>
+        <a class="btn" href="https://github.com/allan818181">GitHub</a>
+        <a class="btn" href="https://www.linkedin.com/in/allan-deus-4b888631a">LinkedIn</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>15,000+</b><small>cars served in production</small></div>
+        <div class="stat"><b>313k</b><small>photos on S3 + CDN</small></div>
+        <div class="stat"><b>7</b><small>languages, one platform</small></div>
+        <div class="stat"><b>20</b><small>public repositories</small></div>
+      </div>
+    </div>
+    <div class="term" aria-label="Terminal showing a deployment">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <pre id="term"></pre>
+    </div>
+  </div>
+</header>
+
+<section id="work" class="alt">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Flagship · in production</div>
+      <h2>Tanzanite Auto Traders</h2>
+      <p class="sub">A multilingual car sales platform for a Japanese used car sales company (Tokyo HQ, East Africa office in Dar es Salaam). A public storefront plus customer, staff and admin portals. I built it end to end and run it on AWS.</p>
+      <div class="chips">
+        <span class="chip">Next.js 16</span><span class="chip">TypeScript</span><span class="chip">Prisma</span><span class="chip">PostgreSQL (Neon)</span><span class="chip">Redis + BullMQ</span><span class="chip">Docker Compose</span><span class="chip">AWS EC2 · S3 · CloudFront · IAM · SSM</span><span class="chip">GitHub Actions + OIDC</span>
+      </div>
+    </div>
+    <div class="flag reveal">
+      <img class="shot" src="assets/tz-home.webp" alt="Tanzanite homepage with search and specialty vehicles" loading="lazy">
+      <img class="shot" src="assets/tz-mobile.webp" alt="Tanzanite homepage on a phone" loading="lazy">
+    </div>
+    <div class="two reveal">
+      <img class="shot" src="assets/tz-stock.webp" alt="Stock list with filters and 15,047 cars" loading="lazy">
+      <img class="shot" src="assets/tz-vehicle.webp" alt="Vehicle page with gallery and price breakdown" loading="lazy">
+    </div>
+    <div class="grid3 reveal">
+      <div class="feat"><div class="ic">⚙</div><h3>Product</h3><p>Smart search, filters and infinite scroll; customer orders and documents; a staff photo pipeline (ZIP upload, WebP variants, watermarking); admin reports, analytics and SEO controls; 7 languages and 4 currencies.</p></div>
+      <div class="feat"><div class="ic">⇪</div><h3>Delivery</h3><p>Every push builds a Docker image, pushes it to ECR and deploys through SSM. Migrations run automatically, and a failed health check rolls back to the previous version.</p></div>
+      <div class="feat"><div class="ic">⛨</div><h3>Security &amp; operations</h3><p>Keyless OIDC deploys, least-privilege IAM, no open SSH port, HSTS/CSP, rate limiting. Daily snapshots, budget alerts, query monitoring and cost tuning.</p></div>
+    </div>
+    <div class="arch reveal">
+      <picture>
+        <source media="(prefers-color-scheme: light)" srcset="assets/architecture-light.svg">
+        <img src="assets/architecture-dark.svg" alt="Architecture: Caddy and Next.js on EC2 with Redis and a worker, Neon PostgreSQL, S3 behind CloudFront, deploys from GitHub Actions via ECR" loading="lazy">
+      </picture>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Selected work</div>
+      <h2>More projects</h2>
+      <p class="sub">Web, desktop and AI projects across Django, React and Node.js. Each repository has a README with setup steps.</p>
+    </div>
+    <div class="projects">
+      <a class="card reveal" href="https://allan818181.github.io/tanzania-stays/"><div class="thumb"><img src="assets/stays.webp" alt="Tanzania Stays" loading="lazy"></div><div class="body"><span class="tag">LIVE</span><h3>Tanzania Stays</h3><p>Villa rentals and sales website with availability calendars, galleries and a blog.</p><div class="row"><span>React · TypeScript · Vite</span></div></div></a>
+      <a class="card reveal" href="https://github.com/allan818181/hospital-system"><div class="thumb"><span class="glyph">🏥</span></div><div class="body"><h3>Meditrack</h3><p>Hospital management with five role-based portals: reception, doctor, lab, pharmacy and admin.</p><div class="row"><span>Django · DRF</span></div></div></a>
+      <a class="card reveal" href="https://github.com/allan818181/vegas"><div class="thumb"><span class="glyph">🤖</span></div><div class="body"><h3>Vegas Hotel AI Concierge</h3><p>An AI chat concierge grounded in a real hotel's suites, prices and policies, capturing bookings as leads.</p><div class="row"><span>Node.js · Express · Gemini</span></div></div></a>
+      <a class="card reveal" href="https://github.com/allan818181/dar-data-portal"><div class="thumb"><span class="glyph">📊</span></div><div class="body"><h3>Dar es Salaam Data Portal</h3><p>Open-data portal with a pandas/Matplotlib transform engine, REST API and PDF/Excel reports.</p><div class="row"><span>Django · DRF · pandas</span></div></div></a>
+      <a class="card reveal" href="https://github.com/allan818181/property-management-system"><div class="thumb"><span class="glyph">🏠</span></div><div class="body"><h3>Abode Harmony</h3><p>Property management for landlords and tenants: receipts, notices and maintenance requests.</p><div class="row"><span>React · TypeScript · Supabase</span></div></div></a>
+      <a class="card reveal" href="https://github.com/allan818181/desktop-library-management-system"><div class="thumb"><span class="glyph">📚</span></div><div class="body"><h3>LBLS Library System</h3><p>Desktop library system with loans, fines, analytics, an audit log and a report builder.</p><div class="row"><span>Python · Tkinter · PostgreSQL</span></div></div></a>
+    </div>
+    <p class="sub reveal" style="margin-top:22px">More on <a href="https://github.com/allan818181?tab=repositories" style="color:var(--blue);font-weight:600">GitHub →</a></p>
+  </div>
+</section>
+
+<section id="skills" class="alt">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Toolbox</div>
+      <h2>What I work with</h2>
+    </div>
+    <div class="skills">
+      <div class="feat reveal"><h3>Frontend &amp; mobile</h3><p>Next.js, React, React Native, Flutter, Tailwind CSS</p><img src="https://skillicons.dev/icons?i=nextjs,react,flutter,tailwind" alt="" loading="lazy"></div>
+      <div class="feat reveal"><h3>Backend</h3><p>Node.js, Express, Django &amp; DRF, REST APIs, auth &amp; RBAC</p><img src="https://skillicons.dev/icons?i=nodejs,express,django,python" alt="" loading="lazy"></div>
+      <div class="feat reveal"><h3>Data</h3><p>PostgreSQL, Prisma, MySQL, Redis, Supabase, pandas</p><img src="https://skillicons.dev/icons?i=postgres,prisma,mysql,redis" alt="" loading="lazy"></div>
+      <div class="feat reveal"><h3>DevOps &amp; cloud</h3><p>AWS, Docker, GitHub Actions, Linux, Caddy/Nginx</p><img src="https://skillicons.dev/icons?i=aws,docker,githubactions,linux" alt="" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap reveal">
+    <div class="eyebrow">Contact</div>
+    <h2>Let's build something that runs.</h2>
+    <p class="sub" style="margin:0 auto">Hiring for a full-stack, backend or DevOps role? I'd like to hear about it.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:allandeus014@gmail.com">allandeus014@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/allan-deus-4b888631a">LinkedIn</a>
+      <a class="btn" href="https://github.com/allan818181">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>© <span id="y"></span> Allan Muganyizi Deus · Dar es Salaam, Tanzania</span><span class="mono">Deployed with GitHub Actions → GitHub Pages</span></div>
+</footer>
+
+<script>
+document.getElementById("y").textContent = new Date().getFullYear();
+// theme toggle (remembered per browser)
+const root = document.documentElement;
+try { const t = localStorage.getItem("theme"); if (t) root.dataset.theme = t; } catch (e) {}
+document.getElementById("theme").addEventListener("click", () => {
+  const dark = root.dataset.theme ? root.dataset.theme === "dark" : !matchMedia("(prefers-color-scheme: light)").matches;
+  root.dataset.theme = dark ? "light" : "dark";
+  try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+});
+// reveal on scroll
+const io = "IntersectionObserver" in window ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 }) : null;
+document.querySelectorAll(".reveal").forEach((el) => io ? io.observe(el) : el.classList.add("in"));
+setTimeout(() => document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in")), 2500);
+// terminal
+const lines = [
+  ['c', '$ git push origin main'],
+  ['', 'GitHub Actions: build → test → deploy'],
+  ['k', '✓ type-check and lint'],
+  ['k', '✓ docker image pushed to ECR'],
+  ['k', '✓ assumed deploy role via OIDC (no stored keys)'],
+  ['k', '✓ SSM: pulled image, ran migrations'],
+  ['ok', '✓ health check passed · site live'],
+  ['', ''],
+  ['c', '$ curl -s /api/health'],
+  ['ok', '{"ok":true}'],
+];
+const term = document.getElementById("term");
+let i = 0;
+function next() {
+  if (i >= lines.length) { term.insertAdjacentHTML("beforeend", '<span class="cursor"></span>'); return; }
+  const [cls, text] = lines[i++];
+  const span = document.createElement("span"); if (cls) span.className = cls; span.textContent = text + "\n";
+  term.appendChild(span); setTimeout(next, i === 1 ? 600 : 420);
+}
+next();
+</script>
+</body>
+</html>
