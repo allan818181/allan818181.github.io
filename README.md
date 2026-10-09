@@ -1,5 +1,4 @@
-# allan818181.github.io
+# Moved
 
-Source of my portfolio site: **https://allan818181.github.io**
-
-A single hand-written HTML page (no framework, no build step): responsive, light/dark theme, scroll reveals, and screenshots of my live projects. Deployed by GitHub Pages on every push to `main`.
+My portfolio now lives at **https://allan.tanzaniteauto.com** (source: [allan818181/portfolio](https://github.com/allan818181/portfolio)).
+This GitHub Pages site redirects there so older links keep working.
